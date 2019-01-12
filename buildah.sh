@@ -16,7 +16,7 @@ chmod 755 $javamnt/work
 
 buildah config --workingdir /work $javacontainer
 buildah config --port 8080
-buildah config --entrypoint '["/deployment/app","-Dshamrock.http.host=0.0.0.0"]' $javacontainer
+buildah config --entrypoint '["./app","-Dshamrock.http.host=0.0.0.0"]' $javacontainer
 
 imageID=$(buildah commit $javacontainer $IMAGE_NAME)
 
