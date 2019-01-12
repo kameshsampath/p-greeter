@@ -10,7 +10,12 @@ mkdir -pv $javamnt/work
 
 # copy the application jar, with Knative build templates, the app sources gets loaded in the /workspace directory
 # adjust application name accordingly
-cp -v /workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME} $javamnt/work
+if [ -z "$CONTEXT_DIR" || "$CONTEXT_DIR" ="."] 
+then
+  cp -v /workspace/target/${JAVA_APP_NAME} $javamnt/work
+else
+  cp -v /workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME} $javamnt/work
+fi
 
 chmod -R 755 $javamnt/work
 
