@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * GreetingResource
  */
-@Path("/hello")
+@Path("/")
 public class GreetingResource {
 
     @GET
