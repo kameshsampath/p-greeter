@@ -14,7 +14,7 @@ if [ -z "$CONTEXT_DIR"  ] || [ "$CONTEXT_DIR" = "." ]
 then
   cp -v "/workspace/target/${JAVA_APP_NAME}" "$javamnt/work"
 else
-  cp -v "/workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME}" "$javamnt/work"
+  cp -v "/workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME}" "$javamnt/work/app"
 fi
 
 chmod -R 755 "$javamnt/work"
