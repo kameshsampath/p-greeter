@@ -29,7 +29,6 @@ spec:
     - name: build-app
       image: ${JAVA_APP_BUILDER_IMAGE}
       args:
-        - mvn 
         - clean
         - package
         - -Pnative
