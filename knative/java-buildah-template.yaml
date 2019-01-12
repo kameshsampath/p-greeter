@@ -34,8 +34,8 @@ spec:
         - -Pnative
       volumeMounts:
         - name: ${CACHE}
-          mountPath: /home/jboss/.m2
-          subPath: m2-cache
+          mountPath: /opt/jboss
+          subpath: .m2
     - name: build-container-push
       image: ${BUILDER_IMAGE}
       workingDir: /workspace/${CONTEXT_DIR}
