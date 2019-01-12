@@ -19,7 +19,7 @@ spec:
             - name: CONTEXT_DIR
               value: "."
             - name: JAVA_APP_NAME
-              value: "greeter-runner"
+              value: "pgreeter-runner"
             - name: CACHE
               value: m2-cache
         volumes:
