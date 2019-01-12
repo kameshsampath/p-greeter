@@ -74,10 +74,9 @@
                 <goals>
                   <goal>native-image</goal>
                 </goals>
-                <!-- configuration>
+                <configuration>
                   <enableHttpUrlHandler>true</enableHttpUrlHandler>
-                  <enableHttpsUrlHandler>true</enableHttpsUrlHandler>
-                </configuration -->
+                </configuration>
               </execution>
             </executions>
           </plugin>
