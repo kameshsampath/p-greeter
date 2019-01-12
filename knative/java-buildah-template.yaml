@@ -6,7 +6,7 @@ spec:
   parameters:
     - name: JAVA_APP_BUILDER_IMAGE
       description: The builder image used to build the java application
-      default: gcr.io/cloud-builders/mvn
+      default: "quay.io/workspace7/java-builder"
     - name: JAVA_APP_NAME
       description: The jar file name of the build artifact
     - name: BUILDER_IMAGE
@@ -31,12 +31,10 @@ spec:
       args:
         - clean
         - package
-        - -Duser.home=/builder/home
         - -Pnative
-        - -Dnative-image.docker-build=true
       volumeMounts:
         - name: ${CACHE}
-          mountPath: /builder/home/.m2
+          mountPath: /home/jboss/.m2
           subPath: m2-cache
     - name: build-container-push
       image: ${BUILDER_IMAGE}

@@ -9,7 +9,7 @@ spec:
         serviceAccountName: builder
         source:
           git:
-            url: https://github.com/kameshsampath/p-greeter
+            url: http://gogs-infra.192.168.64.27.nip.io/kameshs/p-greeter
             revision: master
         template:
           name: java-buildah

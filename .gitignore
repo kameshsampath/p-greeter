@@ -2,3 +2,6 @@ target
 .factorypath
 shamrock.log
 bin
+.classpath
+.project
+.settings
