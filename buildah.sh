@@ -6,13 +6,13 @@ javacontainer=$(buildah from registry.fedoraproject.org/fedora-minimal)
 javamnt=$(buildah mount $javacontainer)
 
 # make the java app directory
-mkdir -p /work
+mkdir -pv $javamnt/work
 
 # copy the application jar, with Knative build templates, the app sources gets loaded in the /workspace directory
 # adjust application name accordingly
-cp /workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME} $javamnt/work
+cp -v /workspace/${CONTEXT_DIR}/target/${JAVA_APP_NAME} $javamnt/work
 
-chmod 755 $javamnt/work
+chmod -R 755 $javamnt/work
 
 buildah config --workingdir /work $javacontainer
 buildah config --port 8080
